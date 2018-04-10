@@ -1,5 +1,18 @@
 @extends('base')
 
+@section('css')
+
+<style type="text/css" media="screen">
+	canvas{
+		width: 100%;
+		height: 400px;
+        border: 2px solid red;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+	}
+</style>
+@endsection
+
 @section('content')
 
 <div class="container">
