@@ -1,102 +1,94 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('base')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-        <style type="text/css">
+@section('css')
+    <style type="text/css">
             
-.signature-pad {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 10px;
-  width: 100%;
-  height: 100%;
-  max-width: 700px;
-  max-height: 460px;
-  border: 1px solid #e8e8e8;
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
-  border-radius: 4px;
-  padding: 16px;
-}
+        .signature-pad {
+          position: relative;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          font-size: 10px;
+          width: 100%;
+          height: 100%;
+          max-width: 700px;
+          max-height: 460px;
+          border: 1px solid #e8e8e8;
+          background-color: #fff;
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
+          border-radius: 4px;
+          padding: 16px;
+        }
 
-.signature-pad::before,
-.signature-pad::after {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  width: 40%;
-  height: 10px;
-  bottom: 10px;
-  background: transparent;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-}
+        .signature-pad::before,
+        .signature-pad::after {
+          position: absolute;
+          z-index: -1;
+          content: "";
+          width: 40%;
+          height: 10px;
+          bottom: 10px;
+          background: transparent;
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+        }
 
-.signature-pad::before {
-  left: 20px;
-  -webkit-transform: skew(-3deg) rotate(-3deg);
-          transform: skew(-3deg) rotate(-3deg);
-}
+        .signature-pad::before {
+          left: 20px;
+          -webkit-transform: skew(-3deg) rotate(-3deg);
+                  transform: skew(-3deg) rotate(-3deg);
+        }
 
-.signature-pad::after {
-  right: 20px;
-  -webkit-transform: skew(3deg) rotate(3deg);
-          transform: skew(3deg) rotate(3deg);
-}
+        .signature-pad::after {
+          right: 20px;
+          -webkit-transform: skew(3deg) rotate(3deg);
+                  transform: skew(3deg) rotate(3deg);
+        }
 
-.signature-pad--body {
-  position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  border: 1px solid #f4f4f4;
-}
+        .signature-pad--body {
+          position: relative;
+          -webkit-box-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          border: 1px solid #f4f4f4;
+        }
 
-.signature-pad--body
-canvas {
-  position: absolute;
-  left: 0;
-  top: 80px;
-  width: 900px;
-  height: 400px;
-  border: 2px solid red;
-  border-radius: 4px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
-}
+        .signature-pad--body
+        canvas {
+          position: absolute;
+          left: 0;
+          top: 80px;
+          width: 900px;
+          height: 400px;
+          border: 2px solid red;
+          border-radius: 4px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+        }
 
-.signature-pad--footer {
-  color: #C3C3C3;
-  text-align: center;
-  font-size: 1.2em;
-  margin-top: 8px;
-}
+        .signature-pad--footer {
+          color: #C3C3C3;
+          text-align: center;
+          font-size: 1.2em;
+          margin-top: 8px;
+        }
 
-.signature-pad--actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-top: 8px;
-}
+        .signature-pad--actions {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          margin-top: 8px;
+        }
+    </style>
 
-        </style>
-    </head>
-    <body>
+@endsection
+
+@section('content')        
         <div class="flex-center position-ref full-height">
             
             <div class="content">
@@ -128,135 +120,4 @@ canvas {
             </div>
 
         </div>
-        <script src="../node_modules/jquery/dist/jquery.js" type="text/javascript" charset="utf-8" async defer></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8" async defer></script>
-        <script src="../node_modules/signature_pad/dist/signature_pad.js" type="text/javascript" charset="utf-8" async defer></script>
-        <script type="text/javascript" charset="utf-8">
-            var wrapper = document.getElementById("signature-pad");
-var clearButton = wrapper.querySelector("[data-action=clear]");
-var changeColorButton = wrapper.querySelector("[data-action=change-color]");
-var undoButton = wrapper.querySelector("[data-action=undo]");
-var savePNGButton = wrapper.querySelector("[data-action=save-png]");
-var saveJPGButton = wrapper.querySelector("[data-action=save-jpg]");
-var saveSVGButton = wrapper.querySelector("[data-action=save-svg]");
-var canvas = wrapper.querySelector("canvas");
-var signaturePad = new SignaturePad(canvas, {
-  // It's Necessary to use an opaque color when saving image as JPEG;
-  // this option can be omitted if only saving as PNG or SVG
-  backgroundColor: 'rgb(255, 255, 255)',
-  minWidth: 0.3,
-  maxWidth: 1,
-  dotSize: 0.1
-});
-
-// Adjust canvas coordinate space taking into account pixel ratio,
-// to make it look crisp on mobile devices.
-// This also causes canvas to be cleared.
-function resizeCanvas() {
-  // When zoomed out to less than 100%, for some very strange reason,
-  // some browsers report devicePixelRatio as less than 1
-  // and only part of the canvas is cleared then.
-  var ratio =  Math.max(window.devicePixelRatio || 1, 1);
-
-  // This part causes the canvas to be cleared
-  canvas.width = canvas.offsetWidth * ratio;
-  canvas.height = canvas.offsetHeight * ratio;
-  canvas.getContext("2d").scale(ratio, ratio);
-
-  // This library does not listen for canvas changes, so after the canvas is automatically
-  // cleared by the browser, SignaturePad#isEmpty might still return false, even though the
-  // canvas looks empty, because the internal data of this library wasn't cleared. To make sure
-  // that the state of this library is consistent with visual state of the canvas, you
-  // have to clear it manually.
-  signaturePad.clear();
-}
-
-// On mobile devices it might make more sense to listen to orientation change,
-// rather than window resize events.
-window.onresize = resizeCanvas;
-resizeCanvas();
-
-function download(dataURL, filename) {
-  var blob = dataURLToBlob(dataURL);
-  var url = window.URL.createObjectURL(blob);
-
-  var a = document.createElement("a");
-  a.style = "display: none";
-  a.href = url;
-  a.download = filename;
-
-  document.body.appendChild(a);
-  a.click();
-
-  window.URL.revokeObjectURL(url);
-}
-
-// One could simply use Canvas#toBlob method instead, but it's just to show
-// that it can be done using result of SignaturePad#toDataURL.
-function dataURLToBlob(dataURL) {
-  // Code taken from https://github.com/ebidel/filer.js
-  var parts = dataURL.split(';base64,');
-  var contentType = parts[0].split(":")[1];
-  var raw = window.atob(parts[1]);
-  var rawLength = raw.length;
-  var uInt8Array = new Uint8Array(rawLength);
-
-  for (var i = 0; i < rawLength; ++i) {
-    uInt8Array[i] = raw.charCodeAt(i);
-  }
-
-  return new Blob([uInt8Array], { type: contentType });
-}
-
-clearButton.addEventListener("click", function (event) {
-  signaturePad.clear();
-});
-
-undoButton.addEventListener("click", function (event) {
-  var data = signaturePad.toData();
-
-  if (data) {
-    data.pop(); // remove the last dot or line
-    signaturePad.fromData(data);
-  }
-});
-
-changeColorButton.addEventListener("click", function (event) {
-  var r = Math.round(Math.random() * 255);
-  var g = Math.round(Math.random() * 255);
-  var b = Math.round(Math.random() * 255);
-  var color = "rgb(" + r + "," + g + "," + b +")";
-
-  signaturePad.penColor = color;
-});
-
-savePNGButton.addEventListener("click", function (event) {
-  if (signaturePad.isEmpty()) {
-    alert("Please provide a signature first.");
-  } else {
-    var dataURL = signaturePad.toDataURL();
-    download(dataURL, "signature.png");
-  }
-});
-
-saveJPGButton.addEventListener("click", function (event) {
-  if (signaturePad.isEmpty()) {
-    alert("Please provide a signature first.");
-  } else {
-    var dataURL = signaturePad.toDataURL("image/jpeg");
-    download(dataURL, "signature.jpg");
-  }
-});
-
-saveSVGButton.addEventListener("click", function (event) {
-  if (signaturePad.isEmpty()) {
-    alert("Please provide a signature first.");
-  } else {
-    var dataURL = signaturePad.toDataURL('image/svg+xml');
-    download(dataURL, "signature.svg");
-  }
-});
-
-        </script>
-    </body>
-</html>
+@endsection
