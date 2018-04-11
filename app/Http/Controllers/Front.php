@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Imagen;
 
+use Spatie;
+
 class Front extends Controller
 {
     public function index(){
@@ -33,8 +35,8 @@ class Front extends Controller
         }
     }
 
-       /**
-     * Toma la nueva imagen del formulario y la actualiza
+    /**
+     * Toma la nueva imagen codificada en base64 y el nombre temporal
      * @param  Request $request [description]
      * @return [type]           [description]
      */
@@ -66,5 +68,16 @@ class Front extends Controller
         }else{
             return redirect()->route(URL::previuos());
         }
+    }
+
+
+    public function test(){
+        $file =  public_path().'/uploads/cuentas.pdf';
+        
+        $destino =  public_path().'/uploads/img.png';
+
+
+        $pdf = new Spatie\PdfToImage\Pdf($file);
+        $pdf->saveImage($destino);
     }
 }

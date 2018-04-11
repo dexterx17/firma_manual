@@ -19,3 +19,5 @@ Route::get('/one', function () {
 Route::post('/add','Front@add')->name('add');
 
 Route::post('/load','Front@load')->name('load');
+
+Route::get('/test','Front@test')->name('test');
