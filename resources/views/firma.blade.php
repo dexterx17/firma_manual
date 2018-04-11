@@ -1,6 +1,7 @@
 @extends('base')
 
 @section('css')
+
 <style type="text/css" media="screen">
 	canvas{
 		border: 2px solid red;
