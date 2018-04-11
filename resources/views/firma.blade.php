@@ -7,13 +7,20 @@
 		border: 2px solid red;
         border-radius: 4px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
-        width: 900px;
-        height: 400px;
+        width: 500px;
+        height: 300px;
 	}
-	@media (max-width: 380px){
+	/* iPads (portrait) ---*/
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
 		canvas {
-			width: 250px;
-			height: 300px;
+			width: 400px;
+			height: 250px;
+		}
+	}
+	@media only screen and (max-width: 320px){
+		canvas {
+			width: 200px;
+			height: 150px;
 		}
 	}
 </style>

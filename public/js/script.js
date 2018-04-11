@@ -39,6 +39,7 @@ $(document).ready(function(){
     resizeCanvas();
 
     function download(dataURL, filename) {
+        signaturePad.removeBlanks();
         $.post('http://127.0.0.1/firma/public/load',{'data':dataURL, _token: $('#token').val() },function(res){
             alert('imagen guardada OK');
         });
