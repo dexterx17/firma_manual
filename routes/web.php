@@ -15,3 +15,7 @@ Route::get('/','Front@index')->name('home');
 Route::get('/one', function () {
     return view('welcome');
 });
+
+Route::post('/add','Front@add')->name('add');
+
+Route::post('/load','Front@load')->name('load');

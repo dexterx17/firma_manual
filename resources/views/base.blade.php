@@ -7,19 +7,19 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <!-- Fonts 
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">-->
         <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
         
         @yield('css')
     </head>
     <body>
     	@yield('content')
-    	
-    	<script src="../node_modules/jquery/dist/jquery.js" type="text/javascript" charset="utf-8" async defer></script>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.js" type="text/javascript" charset="utf-8" async defer></script>
-        <script src="../node_modules/signature_pad/dist/signature_pad.js" type="text/javascript" charset="utf-8" async defer></script>
-		<script src="{{ asset('js/script.js') }}" type="text/javascript" charset="utf-8" async defer></script>
+    	<input id="token" type="hidden" name="_token" value="{{ Session::token() }}">
+    	<script src="{{ asset('js/jquery.js') }}" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ asset('js/bootstrap.js') }}" type="text/javascript" charset="utf-8"></script>
+        <script src="{{ asset('js/signature_pad.js') }}" type="text/javascript" charset="utf-8"></script>
+		<script src="{{ asset('js/script.js') }}" type="text/javascript" charset="utf-8"></script>
 		@yield('js')
     </body>
 </html>
