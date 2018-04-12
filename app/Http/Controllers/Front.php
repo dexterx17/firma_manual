@@ -11,7 +11,11 @@ use Spatie;
 class Front extends Controller
 {
     public function index(){
-    	return view('firma');
+        return view('firma');
+    }
+
+    public function firma_client(){
+    	return view('firma_client');
     }
 
     public function add(Request $request,$referencia_id){

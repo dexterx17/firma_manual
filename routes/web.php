@@ -11,6 +11,7 @@
 |
 */
 Route::get('/','Front@index')->name('home');
+Route::get('/firma_client','Front@firma_client')->name('firma_client');
 	
 Route::get('/one', function () {
     return view('welcome');
