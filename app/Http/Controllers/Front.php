@@ -80,4 +80,39 @@ class Front extends Controller
         $pdf = new Spatie\PdfToImage\Pdf($file);
         $pdf->saveImage($destino);
     }
+
+    public function pdf(){
+
+        $file =  public_path().'/uploads/cuentas.pdf';
+        
+        $sign =  public_path().'/img/usu_1523390746.png';
+
+        // Create new Landscape PDF
+        $pdf = new \setasign\Fpdi\Fpdi('l');
+        // Reference the PDF you want to use (use relative path)
+        $pagecount = $pdf->setSourceFile( $file );
+        // Import the first page from the PDF and add to dynamic PDF
+        $tpl = $pdf->importPage(1);
+        $pdf->AddPage();
+        // Use the imported page as the template
+        $pdf->useTemplate($tpl);
+        // Set the default font to use
+        $pdf->SetFont('Helvetica');
+        // adding a Cell using:
+        // $pdf->Cell( $width, $height, $text, $border, $fill, $align);
+
+        $pdf->Image($sign, 130, 0, 100, 33);
+        
+
+        $pdf->SetFontSize('14');
+        $pdf->SetXY(185,20);
+        $pdf->Cell(100, 40, 'Jaime Santana', 0, 0);
+        // ci
+        $pdf->SetFontSize('14');
+        $pdf->SetXY(185,30);
+        $pdf->Cell(100, 40, '1600392359', 0, 0);
+
+        // render PDF to browser
+        $pdf->Output();
+    }
 }

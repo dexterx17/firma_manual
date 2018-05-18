@@ -21,3 +21,5 @@ Route::post('/add','Front@add')->name('add');
 Route::post('/load','Front@load')->name('load');
 
 Route::get('/test','Front@test')->name('test');
+
+Route::get('/pdf','Front@pdf')->name('pdf');
