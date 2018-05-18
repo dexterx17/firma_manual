@@ -3,6 +3,7 @@
 @section('css')
 
 <style type="text/css" media="screen">
+	
 	canvas{
 		position: absolute;
 		top: 0;
